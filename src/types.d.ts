@@ -3,7 +3,7 @@ interface NoteDate {
   modified: string
 }
 
-interface Note {
+export interface Note {
   id: number
   user: string[10]
   date: NoteDate
