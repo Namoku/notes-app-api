@@ -4,7 +4,7 @@ const isString = (string: string | String): boolean => {
   return typeof string === 'string' || string instanceof String
 }
 const userParse = (userFromReq: any): string => {
-  if (isString(userFromReq)) {
+  if (!isString(userFromReq)) {
     throw new Error('Incorrect or missing user')
   }
   return userFromReq
@@ -12,7 +12,7 @@ const userParse = (userFromReq: any): string => {
 
 const bodyParse = (bodyFromReq: any): string => {
   if (typeof bodyFromReq !== 'string') {
-    throw new Error('Incorrect or missing user')
+    throw new Error('Incorrect or missing body')
   }
   return bodyFromReq
 }
