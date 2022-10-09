@@ -8,5 +8,6 @@ export interface Note {
   user: string[10]
   date: NoteDate
   body: string
-  assets?: string[]
 }
+
+export type NoteEntry = [user: string[10], createdDate: Date, body: string]

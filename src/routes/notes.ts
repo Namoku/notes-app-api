@@ -1,5 +1,6 @@
 import express from 'express'
 import * as notesServices from '../services/notes'
+import { getErrorMessage, toNewNoteEntry } from '../utils'
 
 const router = express.Router()
 
@@ -14,14 +15,14 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { body } = req
-  const newNoteEntry = notesServices.addNote(
-    body.user,
-    body.dateCreated,
-    body.body,
-    body.assets
-  )
-  res.send(newNoteEntry)
+  try {
+    const { body: bodyReq } = req
+    const [user, date, body] = toNewNoteEntry(bodyReq)
+    const addedNote = notesServices.addNote(user, date, body)
+    res.send(addedNote)
+  } catch (error) {
+    res.sendStatus(400).send(getErrorMessage(error))
+  }
 })
 
 export default router

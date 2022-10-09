@@ -27,8 +27,7 @@ export const getNotesById = (id: number): Note | undefined => {
 export const addNote = (
   user: string,
   dateCreated: Date,
-  body: string,
-  assets?: string[]
+  body: string
 ): Note => {
   const newNote: Note = {
     id: Math.max(...notes.map((note) => note.id)) + 1,
@@ -37,8 +36,7 @@ export const addNote = (
       created: dateCreated,
       modified: dateCreated
     },
-    body,
-    assets
+    body
   }
   notes.push(newNote)
   return newNote
