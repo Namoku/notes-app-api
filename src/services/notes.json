@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "user": "jfdsa",
+    "date": {
+      "created": "2022-12-29",
+      "modified": "2022-12-30"
+    },
+    "body": "# Example shit\nHey\nthis will be markdown hehe",
+    "assets": [
+      "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"
+    ]
+  },
+  {
+    "id": 2,
+    "user": "123klal",
+    "date": {
+      "created": "2020-12-29",
+      "modified": "2022-12-30"
+    },
+    "body": "# Another shit\nHey\nthis will be markdown hehe",
+    "assets": [
+      "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"
+    ]
+  }
+]
