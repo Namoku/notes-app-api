@@ -1,6 +1,6 @@
 interface NoteDate {
-  created: string
-  modified: string
+  created: Date
+  modified: Date
 }
 
 export interface Note {
@@ -8,5 +8,5 @@ export interface Note {
   user: string[10]
   date: NoteDate
   body: string
-  assets: string[]
+  assets?: string[]
 }

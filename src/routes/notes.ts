@@ -13,8 +13,15 @@ router.get('/:id', (req, res) => {
   return note != null ? res.send(note) : res.sendStatus(404)
 })
 
-router.post('/', (_req, res) => {
-  res.send('note saved')
+router.post('/', (req, res) => {
+  const { body } = req
+  const newNoteEntry = notesServices.addNote(
+    body.user,
+    body.dateCreated,
+    body.body,
+    body.assets
+  )
+  res.send(newNoteEntry)
 })
 
 export default router
